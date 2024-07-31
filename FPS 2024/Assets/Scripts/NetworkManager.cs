@@ -64,7 +64,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
     
     // Método chamado quando um jogador entra na sala
-    public override void OnPlayerEnteredRoom(Player newPlayer)
+    public override void OnPlayerEnteredRoom(Player newPlayer) // metood prara todos 
     {
         Debug.Log("Player " + newPlayer.NickName + " joined room"); // Loga uma mensagem no console
         MenuManager.instance.UpdatePlayerList(GetPlayerList()); // Atualiza a lista de jogadores no menuManager
@@ -79,13 +79,15 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
     
     // Método chamado quando o jogador entra na sala
-    public override void OnJoinedRoom()
+    public override void OnJoinedRoom() // metodo nosso quando a gnt entra
     {
         Debug.Log("Player " + PhotonNetwork.NickName + " joined room"); // Loga uma mensagem no console
         MenuManager.instance.UpdatePlayerList(GetPlayerList()); // Atualiza a lista de jogadores no menuManager
         MenuManager.instance.SetStartButton(PhotonNetwork.IsMasterClient); // Define o botão de iniciar se o jogador for o mestre da sala
+
     }
-    
+
+
     // Método para carregar uma cena
     public void LoadScene(string sceneName)
     {
