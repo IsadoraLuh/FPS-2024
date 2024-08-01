@@ -100,6 +100,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LoadLevel(sceneName); // Carrega a cena especificada
     }
+  
 
     // Método para obter a lista de jogadores como string
     public string GetPlayerList()
@@ -113,5 +114,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
 
         return list; // Retorna a lista de jogadores
+    }
+    public GameObject InstantiateRPC(string prefabName, Vector3 position, Quaternion rotation)
+    {
+      return  PhotonNetwork.Instantiate(prefabName, position, rotation);
+
     }
 }
